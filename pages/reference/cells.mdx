@@ -16,7 +16,7 @@ Converts `Builder` into an ordinary `Cell`.
 
 ## Builder.storeUint
 ```tact
-extends fun storeUint(self: Builder, value: Int, bits: Int): Builder;
+extends fun Builder.storeUint(value: Int, bits: Int): Builder;
 ```
 Stores an unsigned `bits`-bit integer `value` into `s` for `0 ≤ bits ≤ 256`.
 
