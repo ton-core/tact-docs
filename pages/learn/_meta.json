@@ -1,5 +1,5 @@
 {
-  "hello": "Tact Hello World",
-  "wallet": "Tact wallet contract",
-  "jetton": "Tact jetton contract"
+  "hello": "Hello World",
+  "wallet": "Wallet contract",
+  "jetton": "Jetton contract"
 }
