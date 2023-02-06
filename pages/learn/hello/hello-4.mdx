@@ -1,6 +1,6 @@
 # Tact Hello World
 
-## Introduction to TON Smart Contracts using Tact
+## Receivers and Getters
 
 ### Tact's facts #4
 Here we will learn more about existing tools in Tact for defining contract's behavior in general.
@@ -17,7 +17,8 @@ Here we will learn more about existing tools in Tact for defining contract's beh
  
 
 
-### Tactical Practice #4 - add contract's behaviour
+### Tactical Practice #4
+#### Declare fun
 
 Ok, one more time, we need extend our contract's behaviour
 
@@ -38,7 +39,7 @@ Declare function `add` that will do following things:
 2. Check current incoming message `sender` is equal to `owner` we set for contract in deployment process.
 3. If this check passed add to current `counter` value `v` and update `counter` value in contract. If required is not pass, throw exception message "Invalid sender".
 
-
+#### Declare receivers
 ```tact
 //previous code
 
@@ -59,7 +60,10 @@ Take a look our receivers:
 * `receive("increment")` - specifies actions with messages, that contents comment string "increment" in its body. Here we invoke function `add(v)` with `v = 1`, so we increment contract's counter by one.
 
 
+#### Declare getter
 
+Last function we need to specifier is get function counter, that will return value of current counter value from contract.
+Now our contract is ready, we need compile this, so run:
 
 ```tact
 
@@ -71,13 +75,11 @@ contract SampleTactContract with Deployable {
     }
 
 ```
-Last function we need to specifier is get function counter, that will return value of current counter value from contract.
-Now our contract is ready, we need compile this, so run:
+Command `yarn build` will compile `contract.tact` and place result in `tact-template/src/output`.
 
 ```bash
 yarn build
 ```
-Command `yarn build` will compile `contract.tact` and place result in `tact-template/src/output`.
 
 ![Tact compile scheme](public/tact-hello-world/tact-compiler-scheme.png)
 >If you faced some compile issue and can't figure out what is wrong, just compare with target contract placed in `sources/example/increment.tact` or [here](https://github.com/ton-community/tact-guide-template/blob/main/sources/example/increment.tact).

@@ -1,8 +1,8 @@
 {
-  "hello-1": "Hello World 1 of 6",
-  "hello-2": "Hello World 2 of 6",
-  "hello-3": "Hello World 3 of 6",
-  "hello-4": "Hello World 4 of 6",
-  "hello-5": "Hello World 5 of 6",
-  "hello-6": "Hello World 6 of 6"
+  "hello-1": "Tact and TON terms",
+  "hello-2": "Tact project structure",
+  "hello-3": "Tact contract structure",
+  "hello-4": "Receivers and Getters",
+  "hello-5": "Contract deployment",
+  "hello-6": "Get data from contract"
 }

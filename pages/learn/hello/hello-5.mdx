@@ -1,6 +1,6 @@
 # Tact Hello World
 
-## Introduction to TON Smart Contracts using Tact
+## Contract deployment
 
 ### Tact's facts #5
 
@@ -18,7 +18,8 @@ Now we on finale stage. We need to deploy our contract to Blockchain. To do this
 > Note, this design of deployment used just for clearness. Deploying via Wallet App, Working with public API convenient for learning purposes and a bad way for real products.
 
 
-### Tactical Practice #5 - deploy the contract
+### Tactical Practice #5
+#### Deploy the contract
 
 Before deployment, according to said before we need to prepare Ton wallet contract with funds. We will use test environment, that maintained with test nodes and called testnet(production calls mainnet).
 
@@ -34,7 +35,7 @@ Before deployment, according to said before we need to prepare Ton wallet contra
 4. Get address from your wallet and input it in deployment script - `contract.deploy.ts`. 
 For me, it was `kQDND6yHEzKB82ZGRn58aY9Tt_69Ie_uz73e2VuuJ3fVVcxf`:
 
-```java title="tact-template/sources/contract.deploy.ts"
+```tact"
 //previous code
 // Parameters
 let owner = Address.parse('kQDND6yHEzKB82ZGRn58aY9Tt_69Ie_uz73e2VuuJ3fVVcxf'); // Replace owner with your address
