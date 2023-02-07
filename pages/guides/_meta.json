@@ -1,4 +1,5 @@
 {
+  "overview": "Tact overview",
   "types": "Type system",
   "functions": "Functions",
   "statements": "Statements",
@@ -6,5 +7,6 @@
   "send": "Send messages",
   "upgrades": "Contract upgrades",
   "func": "Compatibility with Func",
+  "abi-tl-b": "Data serialization",
   "grammar": "Grammar"
 }
