@@ -1,10 +1,14 @@
+import { Callout } from 'nextra-theme-docs'
+
 # Tact wallet contract
 ## What is wallet
 
 This article explains how wallet contract works in Tact, how to deploy and test this.
 
->Did you notice something unclear, incorrect or get stuck with some issue in guide? Please ask a question in the Telegram [chat](https://t.me/tondev_eng) or text me directly [@iftryalexg](https://t.me/iftryalexg). Guide will be updated ASAP and all unclear points will be clarified 🚒💦🔥.
-
+<Callout>
+Did you notice something unclear, incorrect or get stuck with some issue in this guide? Please ask a question in the Telegram [chat](https://t.me/tactlang) or text me directly [@iftryalexg](https://t.me/iftryalexg).
+Guide will be updated ASAP and all unclear points will be clarified 🚒💦🔥.
+</Callout>
 
 ### Set up your environment
 
@@ -56,5 +60,8 @@ Let's describe small list of feature for wallet contract:
 * Requests for action with funds by owner.
 * Get and handle messages from other smart-contracts, including incoming transfer of funds.
 
-> Explorers recognize contract's type by hash of the smart contract's code or by interfaces founded in smart contract. If you check your common wallet contract with [explorer](https://tonscan.org/), you will see that it recognized with type "wallet". From this side, tact-wallet contract is a new version, and it will have different hash(because of original FunC contract and FunC compiled from Tact will be absolutely different). On the same reason current wallet application will not support Tact contract until they add its tact version to their applications.
+
+<Callout type="info" emoji="📚️">
+Explorers recognize contract's type by hash of the smart contract's code or/and by interfaces founded in smart contract. If you check your common wallet contract with [explorer](https://tonscan.org/)([testnet explorer](https://testnet.tonscan.org/)), you will see that it recognized with type "wallet". From this side, tact-wallet contract is a new version, and it will have different hash(because of original FunC contract and FunC compiled from Tact will be absolutely different). On the same reason current wallet application will not support Tact contract until they add its tact version to their applications.
+</Callout>
 

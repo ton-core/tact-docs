@@ -1,10 +1,15 @@
+import { Callout } from 'nextra-theme-docs'
+
 # Tact Hello World
 
 ## Contract deployment
 
 ### Tact's facts #5
 
-Now we on finale stage. We need to deploy our contract to Blockchain. To do this, we will use Ton wallet application. In this way we avoid a lot of details about deployment process, but you can find more details about this in followed low-levels guides.
+Now we on finale stage. We need to deploy our contract to Blockchain. To do this, we will use Ton wallet application.
+<Callout type="info" emoji="📚️">
+In this way, we avoid a lot of details about the deployment process, but you can find more details about this in followed low-level guides.
+</Callout>
 
 * To deploy our new contract we need send message with init information in its to address of our contract. 
 * We can know destination address of contract because of definition of Address depends on only from contract's data and code. We know both. 
@@ -12,10 +17,11 @@ Now we on finale stage. We need to deploy our contract to Blockchain. To do this
 * To send outgoing message in TON, sender should pay fees. In our case, we need some funds on Ton wallet to pay this action.
 
 
-
 ![Tact deploy](public/tact-hello-world/tact-hello-world-6.png)
 
-> Note, this design of deployment used just for clearness. Deploying via Wallet App, Working with public API convenient for learning purposes and a bad way for real products.
+<Callout type="warning" emoji="⚠️">
+Note, this design of deployment is used just for clarity. Deploying via Wallet App, Working with public API is convenient for learning purposes and does not best practice for projects in the production environment.
+</Callout>
 
 
 ### Tactical Practice #5
@@ -48,8 +54,10 @@ yarn deploy
 ```
 It will ask from you wallet you want use, choose what you used before(Tonkeeper/Sandbox).
 
-6. Read deployment link through reading QR or open link via your testnet TON wallet, confirm outgoing message in wallet application.
+6. Read deployment link through reading QR or open URL link via your testnet TON wallet, confirm outgoing message in wallet application.
 
 ![deployment-1](public/tact-hello-world/tact-deployment-process-2.png)
 
->If you faced some compile issue and can't figure out what is wrong, just compare with target contract placed in `sources/example/increment.tact` or [here](https://github.com/ton-community/tact-guide-template/blob/main/sources/example/increment.tact).
+<Callout type="info" emoji="💡️">
+If you faced some compile issue and can't figure out what is wrong, just compare it with the target contract placed in `sources/example/increment.tact` or [here](https://github.com/ton-community/tact-guide-template/blob/main/sources/example/increment.tact).
+</Callout>

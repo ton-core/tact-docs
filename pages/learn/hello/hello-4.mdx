@@ -1,3 +1,5 @@
+import { Callout } from 'nextra-theme-docs'
+
 # Tact Hello World
 
 ## Receivers and Getters
@@ -9,8 +11,8 @@ Here we will learn more about existing tools in Tact for defining contract's beh
 
 | Entity      | Description                                                                                                                                                                                                |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `fun`       | Special Tact keyword for declaring function. Functions serves for convenient abstraction of logic and optimization that helps code be more readable. |
-| `init()`    | Function that declares initial values will be stored in contract's data. It will be use in Deployment process, when contract creates in Blockchain.                                                        |
+| `fun`       | Special Tact keyword for declaring function. Functions serve for the convenient abstraction of logic and optimization that helps code be more readable. |
+| `init()`    | Function that declares initial values will be stored in contract's data. It will be use in Deployment process, when contract creates in Blockchain. It is mandatory to be defined for the contract.                                                        |
 | `context()` | Tact stdlib helper that gets common properties about current incoming messages such as sender's Address, message's body and message value.                                                                           |
 | `recieve()` | Special function of contract serves to declare behaviours of contract with messages.                                                                                                                       |
 | `get fun`   | Special keywords of contract serves to declare get functions. According to name, this uses to get information from its data.                                                                               |
@@ -75,11 +77,24 @@ contract SampleTactContract with Deployable {
     }
 
 ```
+
+<Callout type="info" emoji="📚️">
+**Getters** are not accessible from other contracts and exported only to off-chain world.
+</Callout>
+
+
+#### Build contract
+
 Command `yarn build` will compile `contract.tact` and place result in `tact-template/src/output`.
+
+![Tact compile scheme](public/tact-hello-world/tact-compiler-scheme.png)
+
+Run yarn command from terminal:
 
 ```bash
 yarn build
 ```
 
-![Tact compile scheme](public/tact-hello-world/tact-compiler-scheme.png)
->If you faced some compile issue and can't figure out what is wrong, just compare with target contract placed in `sources/example/increment.tact` or [here](https://github.com/ton-community/tact-guide-template/blob/main/sources/example/increment.tact).
+<Callout type="info" emoji="💡">
+If you faced some compile issue and can't figure out what is wrong, just compare with target contract placed in `sources/example/increment.tact` or [here](https://github.com/ton-community/tact-guide-template/blob/main/sources/example/increment.tact).
+</Callout>

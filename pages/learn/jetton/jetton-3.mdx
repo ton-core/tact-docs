@@ -1,6 +1,5 @@
 # Jetton contract
 ## Jetton deployment
-> Did you notice something unclear, incorrect or get stuck with some issue in guide? Please ask a question in the Telegram [chat](https://t.me/tondev_eng) or text me directly [@iftryalexg](https://t.me/iftryalexg). Guide will be updated ASAP and all unclear points will be clarified 🚒💦🔥.
 
 ### Jetton tact demo project
 
@@ -49,8 +48,8 @@ contract SampleJetton with Jetton {
     }
 }
 ```
-In general, this contract receive "Mint" message, and if it happens he invoke mint() function,
-that declared in `@stdlib/jetton`. mint() create message and send it to new jetton-wallet contract address.
+This contract receive "Mint" message, and if it happens he invokes `mint()` function,
+that declared in `@stdlib/jetton`. Function `mint()` creates a message and sends it to the new jetton-wallet contract address.
 
 ![jetton-8](public/tact-jetton/tact-jetton-9.png)
 1. _Wallet App A_ send request to _Wallet A_ send mint message to minter. Currently Minter does not exist in blockchain.
@@ -60,8 +59,7 @@ that declared in `@stdlib/jetton`. mint() create message and send it to new jett
 ### Deployment of jetton wallets for new users
 Similar process happens when user of _Wallet App A_, want to send tokens to user of _Wallet App B_.
 The trick is, our contract Jetton always send information and the whole code to another address. When it comes to destination, code executes and from case was it deployed before or already deployed.
-In this case - [transfer](https://github.com/ton-core/tact/blob/main/stdlib/libs/jetton/messages.tact#L1) jetton message become the initial message at same moment and deploys Jetton B smart contract.
-
+In this case - the [transfer jetton message](https://github.com/ton-core/tact/blob/main/stdlib/libs/jetton/messages.tact#L1) invokes `init()` function and transfers tokens, as a result, deploys the _Jetton B_ smart contract with token balance sent from _Jetton A_.
 ![jetton-8](public/tact-jetton/tact-jetton-10.png)
 
 From [jetton/wallet.tact](https://github.com/ton-core/tact/blob/main/stdlib/libs/jetton/wallet.tact#L38), we can see, that it will create initial data for new jetton wallet contract:
@@ -91,8 +89,7 @@ From [jetton/wallet.tact](https://github.com/ton-core/tact/blob/main/stdlib/libs
 ```
 
 Here, `initOf` allows to calculate new contract's init data.
-It calculates from address of regular `Wallet B`, here `msg.destination` and address of Token master contract `self.master`. Because of that we always now both, we can now what address we will use as destination.
-
+It calculates from address of regular `Wallet B`, here `msg.destination` and address of _Minter_ contract `self.master`. Because we always know both, we can be sure which address we will use as our destination.
 
 To display all data clear, application should read each element of process with get methods. It is job, that, for example, have to do blockchain explorers.
 ![jetton-8](public/tact-jetton/tact-jetton-11.png)

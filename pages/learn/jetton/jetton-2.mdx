@@ -1,3 +1,5 @@
+import { Callout } from 'nextra-theme-docs'
+
 # Jetton contract
 
 ## Jetton standard explanation
@@ -7,7 +9,9 @@ In TON digital tokens was named Jettons. Now, we will walk through the Jetton st
 
 Because of sharding, where payload on Blockchain will split to different nodes, we need keep our contracts as small blockchains.
 
-> 📚 Every time you noticed, that your contract keep growing to infinity map in your contract-like-big-monolith - something in designing of service went wrong.
+<Callout type="info" emoji="📚 ">
+Every time you noticed, that your contract keep growing to infinity map in your contract-like-big-monolith - something in designing of service went wrong.
+</Callout>
 
 To keep possibility make our smart contracts split shards we want keep all smart contracts as small blockchain.
 
@@ -20,7 +24,9 @@ Here scheme of transfer tokens from user of _Wallet App A_ to user _Wallet App B
 3. _Jetton A_ sends to _Jetton B_ value of jetton we want to transfer. Decrease his own balance of jettons.
 4. _Jetton B_ get incoming message, increase its jetton balance, send notification to wallet contract _Wallet B_.
 
-> 📚 Notification necessary to find out what is balance of Jetton contract, because you have no option to get(use get method) information from contract.
+<Callout type="info" emoji="📚 ">
+**Notification** necessary to find out what is balance of Jetton contract, because you have no option to get(use get method) information from contract.
+</Callout>
 
 If we will scale our user base, we just get growing of little blockchains. THere will not appear big monolith entity now.
 ![jetton-7](public/tact-jetton/tact-jetton-7.png)

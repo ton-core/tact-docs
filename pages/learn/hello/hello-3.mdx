@@ -12,13 +12,15 @@ So, let's say, **contracts** and **messages** are our main characters in blockch
 
 2. **Message** - is a command that we send to the contract. It tells the contract what to do and can include information like how much funds to transfer or what information to deliver.
 
-On the scheme you can see not perfectly accurate graphic representation of working in blockchain, where different smart contracts (circles) communicate to each other with messages.
+On the scheme, you can see a representation of how blockchain works, where different **contracts** communicate with each other by **messages**.
 
 ![Tact deploy](public/tact-hello-world/tact-hello-world-5.png)
 
 #### Get functions
-Additional general tool, that extends functions of contracts - is getters or get functions. This feature allows to get read-only information from contract's data. Usually, get-function is using to deliver information(for example, smart-contract current balance) to the application, but it is impossible to call it from another contract.
+Additional general tool, that extends functions of the contract - is **getter** or **get function**. This feature allows to get read-only information from contract's data. Usually, get-function is using to deliver information(for example, smart-contract current balance) to the application, but it is impossible to call it from another contract.
 ![Tact deploy](public/tact-hello-world/tact-hello-world-7.png)
+
+Read more about contract structure [here](../../first).
 
 #### Smart contract development
 In summary, the main goal of smart contract developers is to declare and write the logic of actions in a smart contract correspondingly to messages it gets from other smart contracts. If it is necessary to get information and deliver it off-chain(common web app), there are get functions that should be declared.
@@ -35,7 +37,7 @@ Additional restriction for our smart contract - It will check if the person send
 ### Tactical practice #3
 #### Import modules
 
-Come back to `tact-guide-template` project via IDE(VScode) and begin to write the contract file `contract.tact`. That, our first Tact string is declaring an additional library, where some useful Tact functions are defined.
+Come back to `tact-guide-template` project via IDE(VS Code) and begin to write the contract file `contract.tact`. That, our first Tact string is declaring an additional library, where some useful Tact functions are defined.
 
 ```tact
 import "@stdlib/deploy";
