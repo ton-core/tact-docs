@@ -1,3 +1,6 @@
+# Tact documentation has been moved to [tact-lang/tact-docs](https://github.com/tact-lang/tact-docs)
+⚠️ This repository marked as archived and no longer supported. 
+
 # Tact documentation
 
 This repository contains a Tact compiler documentation.
